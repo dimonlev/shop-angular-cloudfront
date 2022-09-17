@@ -38,9 +38,15 @@ speed-measure-plugin*.json
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
+package-lock.json
 testem.log
 /typings
 
 # System Files
 .DS_Store
 Thumbs.db
+
+jspm_packages
+
+# Serverless directories
+.serverless
