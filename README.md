@@ -2,6 +2,18 @@
 
 Angular version: ~12.
 
+Manual deploy
+
+- [Link to S3 website](http://angular-cloudfront.s3-website-eu-west-1.amazonaws.com/)
+
+- [Link to S3 manual deploy website](http://angular-cloudfront-manual.s3-website-eu-west-1.amazonaws.com/)
+- [Link to cloudfront manual deploy website](https://d3p5dnchj4qmtk.cloudfront.net/)
+
+Auto deploy
+
+- [Link to S3 auto deploy website](http://angular-cloudfront-auto-deploy.s3-website-eu-west-1.amazonaws.com/)
+- [Link to cloudfront auto deploy website](https://d3pqms05kkm99n.cloudfront.net/)
+
 Repo maintainers:
 
 - [Sergey Gultyayev](https://github.com/gultyaev)
