@@ -38,6 +38,8 @@
     "bootstrap": "^4.6.0",
     "rxjs": "~6.6.0",
     "serverless-finch": "^4.0.0",
+    "swagger-ui": "^4.14.1",
+    "swagger-ui-dist": "^4.14.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },

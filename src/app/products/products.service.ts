@@ -11,6 +11,8 @@ import { ApiService } from '../core/api.service';
   providedIn: 'root',
 })
 export class ProductsService extends ApiService {
+  private readonly apiUrl =
+    'https://cm3jpo1x3b.execute-api.eu-west-1.amazonaws.com/dev/products';
   createNewProduct(product: Product): Observable<Product> {
     if (!this.endpointEnabled('bff')) {
       console.warn(
@@ -49,7 +51,7 @@ export class ProductsService extends ApiService {
         );
     }
 
-    const url = this.getUrl('bff', `products/${id}`);
+    const url = this.getUrl('bff', `${this.apiUrl}/${id}`);
     return this.http
       .get<{ product: Product }>(url)
       .pipe(map((resp) => resp.product));
@@ -60,7 +62,7 @@ export class ProductsService extends ApiService {
       console.warn(
         'Endpoint "bff" is disabled. To enable change your environment.ts config'
       );
-      return this.http.get<Product[]>('/assets/products.json');
+      return this.http.get<Product[]>(this.apiUrl);
     }
 
     const url = this.getUrl('bff', 'products');
