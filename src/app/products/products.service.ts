@@ -12,7 +12,7 @@ import { ApiService } from '../core/api.service';
 })
 export class ProductsService extends ApiService {
   private readonly apiUrl =
-    'https://cm3jpo1x3b.execute-api.eu-west-1.amazonaws.com/dev/products';
+    'https://cm3jpo1x3b.execute-api.eu-west-1.amazonaws.com/dev/productsPG';
   createNewProduct(product: Product): Observable<Product> {
     if (!this.endpointEnabled('bff')) {
       console.warn(
