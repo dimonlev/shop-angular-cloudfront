@@ -44,6 +44,9 @@ export class EditProductComponent implements OnInit, OnDestroy {
   get titleCtrl(): AbstractControl {
     return this.form.get('title') as AbstractControl;
   }
+  get coverCtrl(): AbstractControl {
+    return this.form.get('cover') as AbstractControl;
+  }
 
   private readonly onDestroy$: Subject<void> = new Subject();
 
@@ -59,6 +62,7 @@ export class EditProductComponent implements OnInit, OnDestroy {
       description: ['', Validators.required],
       price: ['', Validators.required],
       count: ['', Validators.required],
+      cover: ['', Validators.required],
     });
   }
 
@@ -91,10 +95,11 @@ export class EditProductComponent implements OnInit, OnDestroy {
 
   editProduct(): void {
     const product: Product = this.form.value;
-    if (!product) {
-      return;
-    }
-
+    console.log(product);
+    // if (!product) {
+    //   return;
+    // }
+    console.log(product);
     const editProduct$ = this.productId
       ? this.productsService.editProduct(this.productId, product)
       : this.productsService.createNewProduct(product);
