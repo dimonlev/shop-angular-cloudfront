@@ -10,14 +10,14 @@ export const environment: Config = {
     product:
       'https://cm3jpo1x3b.execute-api.eu-west-1.amazonaws.com/dev/productsPG',
     order: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
-    import: 'https://2ogd4otpgl.execute-api.eu-west-1.amazonaws.com/dev/import',
+    import: 'https://2ogd4otpgl.execute-api.eu-west-1.amazonaws.com/dev',
     bff: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
     cart: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
   },
   apiEndpointsEnabled: {
     product: false,
     order: false,
-    import: false,
+    import: true,
     bff: false,
     cart: false,
   },
