@@ -52,14 +52,14 @@ export class CartComponent implements OnInit {
       address: ['', Validators.required],
       comment: '',
     });
-
+    console.log('this.shippingInfo: ', this.shippingInfo);
     this.products$ = this.checkoutService.getProductsForCheckout().pipe(
       shareReplay({
         refCount: true,
         bufferSize: 1,
       })
     );
-
+    console.log('this.products$: ', this.products$);
     this.totalPrice$ = this.products$.pipe(
       map((products) => {
         const total = products.reduce((acc, val) => acc + val.totalPrice, 0);
@@ -70,9 +70,11 @@ export class CartComponent implements OnInit {
         bufferSize: 1,
       })
     );
-
+    console.log('this.totalPrice$: ', this.totalPrice$);
     this.totalInCart$ = this.cartService.totalInCart$;
     this.cartEmpty$ = this.totalInCart$.pipe(map((count) => count > 0));
+    console.log('this.totalInCart$: ', this.totalInCart$);
+    console.log('this.cartEmpty$: ', this.cartEmpty$);
   }
 
   add(id: string): void {
@@ -81,5 +83,9 @@ export class CartComponent implements OnInit {
 
   remove(id: string): void {
     this.cartService.removeItem(id);
+  }
+
+  show(): void {
+    console.log('this.shippingInfo: ', this.shippingInfo);
   }
 }
